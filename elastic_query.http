@@ -1,0 +1,64 @@
+
+### Get mapping
+GET http://localhost:9200/emails/_mapping
+Content-Type: application/json
+
+
+### Get email
+GET http://localhost:9200/emails/_search
+Content-Type: application/json
+
+{
+  "query": {
+    "match_all": {}
+  }
+}
+
+
+### Get document by id
+GET http://localhost:9200/emails/_doc/tQmLDZAB7pVqmNywl_Y7
+Content-Type: application/json
+
+### Update status by id
+POST http://localhost:9200/emails/_update/tQmLDZAB7pVqmNywl_Y7
+Content-Type: application/json
+
+{
+  "doc": {
+    "status": "ERROR"
+  }
+}
+
+
+
+### Delete
+POST http://localhost:9200/emails/_delete_by_query
+Content-Type: application/json
+
+{
+  "query": {
+    "match_all": {}
+  }
+}
+
+### Delete all
+DELETE http://localhost:9200/emails
+Content-Type: application/json
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
